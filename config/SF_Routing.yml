@@ -1,0 +1,19 @@
+#SF_Routing File
+
+index:
+  url: /
+  param: { module: index, action: index }
+
+blog_roll:
+  url: /blogs
+  param: { module: blog, action: blogRoll }
+
+blog_listing:
+  url: /blog/:blogName
+  param: { module: blog, action: listing }
+  requirements: { blogName: '[A-Za-z0-9-+]+' }
+  
+blog_single:
+  url: /blog/:blogName/:title/:postId
+  param: { module: blog, action: single }
+  requirements: { blogName: '[A-Za-z0-9-+]+', title: '[A-Za-z0-9-+]+', postId: '[0-9]+' }
