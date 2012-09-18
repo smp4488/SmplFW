@@ -1,3 +1,1 @@
-<?php
-	echo('Index Success!');
-?>
+<h1>Index Success!</h1>

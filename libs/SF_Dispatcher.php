@@ -14,12 +14,12 @@ class SF_Dispatcher
 	{
 		$moduleName = $this->module->getModuleName();
 		$actionName = $this->module->getAction();
+		
 		try{
 			include('modules/' . $moduleName . '/actions/actionsClass.php');
 			$moduleClass = $moduleName.'Actions';
-			$actions = new $moduleClass($actionName);
-			$actions->preExecute();
-			call_user_func(array($actions, 'execute'. ucfirst($actionName)));
+			$actions = new $moduleClass($moduleName,$actionName);
+			$actions->_default();
 			
 		}
 		catch(Exception $e){

@@ -21,10 +21,8 @@ class SF_Request{
 	}
 	
 	function checkRoute(){
-		require_once "spyc.php";
+
 		$routingFile = Spyc::YAMLLoad('./config/SF_Routing.yml');
-		//var_dump($routingFile);
-		
 		$requestUri = $_SERVER['REQUEST_URI'];
 		
 		foreach ($routingFile as $route){
@@ -34,6 +32,7 @@ class SF_Request{
 				$action = !empty($route['param']['action']) ? $route['param']['action'] : null;
 				//$params = array_slice($requestURI, 2);	
 				$params = null;
+				//var_dump($moduleName,$action,$params);
 				$this->module = new SF_Module($moduleName,$action,$params);	
 			}
 		}
