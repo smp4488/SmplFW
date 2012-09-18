@@ -4,6 +4,10 @@ index:
   url: /
   param: { module: index, action: index }
 
+cms:
+  url: /cms
+  param: { module: cms, action: index }
+
 blog_roll:
   url: /blogs
   param: { module: blog, action: blogRoll }

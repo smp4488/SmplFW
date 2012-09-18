@@ -16,7 +16,7 @@ class SF_Dispatcher
 		$actionName = $this->module->getAction();
 		
 		try{
-			include('modules/' . $moduleName . '/actions/actionsClass.php');
+			include('modules/' . $moduleName . '/actions/'. $moduleName .'Actions.php');
 			$moduleClass = $moduleName.'Actions';
 			$actions = new $moduleClass($moduleName,$actionName);
 			$actions->_default();

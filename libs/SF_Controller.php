@@ -1,4 +1,5 @@
 <?php
+include 'libs/SF_Model.php';
 
 class SF_Controller
 {
@@ -41,9 +42,5 @@ class SF_Controller
 	{
 	}
 	
-	function execute()
-	{
-	
-	}
 }
 ?>
