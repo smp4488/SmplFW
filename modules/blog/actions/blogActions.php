@@ -9,12 +9,14 @@ class blogActions extends SF_Controller
 	}
 	
 	public function executeIndex(){
-	    $this->title = "SmplFW Blog Index Action!";
+	    $this->title = $this->parameters['blogName'];
 
 	}
 	
 	public function executeSingle(){
-	    $this->title = "SmplFW Blog Single Action!";
+	    $this->title = $this->parameters['blogName']." | " . $this->parameters['title'];
+	    //var_dump($this->parameters);
+	    //exit();
 	}
 }
 

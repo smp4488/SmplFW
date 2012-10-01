@@ -14,11 +14,12 @@ class SF_Dispatcher
 	{
 		$moduleName = $this->module->getModuleName();
 		$actionName = $this->module->getAction();
+		$parameters = $this->module->getParameters();
 		
 		try{
 			include('modules/' . $moduleName . '/actions/'. $moduleName .'Actions.php');
 			$moduleClass = $moduleName.'Actions';
-			$actions = new $moduleClass($moduleName,$actionName);
+			$actions = new $moduleClass($moduleName,$actionName, $parameters);
 			$actions->_default();
 			
 		}

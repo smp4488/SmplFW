@@ -1,10 +1,5 @@
 #SF_Routing File
 
-blog_listing:
-  url: /blog/:blogName
-  param: { module: blog, action: index }
-  requirements: { blogName: '[A-Za-z0-9-+]+' }
-
 index:
   url: /
   param: { module: index, action: index }

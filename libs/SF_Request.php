@@ -26,7 +26,7 @@ class SF_Request{
 		    unset($routeURI[0]);//remove blank spot
 		    $routeURI = array_values($routeURI);//reset indexes	
 		    $params = array();//reset partial match
-		
+		    
 		    if(count($routeURI) != count($requestURI)){
 			continue;
 		    }
@@ -35,21 +35,22 @@ class SF_Request{
 		    {
 			if($requestURI[$i] == $routeURI[$i])
 			{
-			    
+			    //array_push($params, $requestURI[$i]);
 			}elseif (strpos($routeURI[$i], ':') !== false) {
-			    $params[$routeURI[$i]] = $requestURI[$i];//add param from url
+			    $paramValue = str_replace(':', '', $routeURI[$i]);
+			    $params[$paramValue] = $requestURI[$i];//add param from url
+			    $routeURI[$i] = $requestURI[$i];
 			}
 			$i++;
-		    }			
-			
-		    if($route['url'] == $requestUri || $route['url'] == $requestUri . "/"){
+		    }	
+		
+		    if($routeURI == $requestURI || $routeURI == $requestURI . "/"){
+			    //var_dump($params);
+			    //exit();
 			    $moduleName = !empty($route['param']['module']) ? $route['param']['module'] : null;
 			    $action = !empty($route['param']['action']) ? $route['param']['action'] : null;
-			    //$params = array_slice($requestURI, 2);	
-			    $params = null;
+			    
 			    $this->module = new SF_Module($moduleName,$action,$params);	
-			    var_dump($this->module);
-			    exit();
 		    }
 		    
 		}

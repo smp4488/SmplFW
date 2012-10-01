@@ -6,10 +6,11 @@ class SF_Controller
 	var $module;
 	var $action;
 	
-	function SF_Controller($module,$action)
+	function SF_Controller($module,$action,$parameters)
 	{
 	    $this->module = $module;
 	    $this->action = $action;
+	    $this->parameters = $parameters;
 	}
 	
 	function _default()

@@ -1,1 +1,1 @@
-<h1>A single Blog Post</h1>
+<h1>A single Blog Post about <?php echo $this->parameters['title'];?> from the <?php echo $this->parameters['blogName'];?> Blog.</h1>

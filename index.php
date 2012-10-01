@@ -8,7 +8,8 @@ require_once 'libs/spyc.php';
 //echo("SmplFW Initialized!");
 $request = new SF_Request();
 $module = $request->getModule();
-
+//var_dump($module);
+//exit();
 $dispatcher = new SF_Dispatcher($module);
 $dispatcher->Dispatch();
 ?>
