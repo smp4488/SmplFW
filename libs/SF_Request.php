@@ -17,8 +17,7 @@ class SF_Request{
 	
 	function checkRoute($requestURI){
 
-		$routingFile = Spyc::YAMLLoad('./config/SF_Routing.yml');
-		$params = array();
+		$routingFile = Spyc::YAMLLoad('./config/SF_Routing.yml');		
 		$i = 0;
 		
 
@@ -26,26 +25,31 @@ class SF_Request{
 		    $routeURI = !is_null(explode('/', $route['url']))? explode('/', $route['url']) : '/';
 		    unset($routeURI[0]);//remove blank spot
 		    $routeURI = array_values($routeURI);//reset indexes	
-			
+		    $params = array();//reset partial match
+		
+		    if(count($routeURI) != count($requestURI)){
+			continue;
+		    }
+		    
 		    while($i <= count($requestURI))
 		    {
-
+			if($requestURI[$i] == $routeURI[$i])
+			{
+			    
+			}elseif (strpos($routeURI[$i], ':') !== false) {
+			    $params[$routeURI[$i]] = $requestURI[$i];//add param from url
+			}
 			$i++;
 		    }			
 			
-		    foreach($routeURI as $routePart)
-		    {
-			if()
-			{
-
-			}
-		    }
 		    if($route['url'] == $requestUri || $route['url'] == $requestUri . "/"){
 			    $moduleName = !empty($route['param']['module']) ? $route['param']['module'] : null;
 			    $action = !empty($route['param']['action']) ? $route['param']['action'] : null;
 			    //$params = array_slice($requestURI, 2);	
 			    $params = null;
 			    $this->module = new SF_Module($moduleName,$action,$params);	
+			    var_dump($this->module);
+			    exit();
 		    }
 		    
 		}
