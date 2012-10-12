@@ -18,6 +18,10 @@ class blogActions extends SF_Controller
 	    //var_dump($this->parameters);
 	    //exit();
 	}
+  
+  public function postExecute(){
+
+  }
 }
 
 ?>

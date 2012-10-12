@@ -19,14 +19,14 @@ class SF_Controller
 	    $this->styleSheets = $includesFile['styleSheets'];
 	    $this->javaScripts = $includesFile['javaScripts'];
 	    
-	    $this->preExecute();//Pre Execute for all actions in the requested module
+	    method_exists($this, 'preExecute') ? $this->preExecute() : false;//Pre Execute for all actions in the requested module
 	    
 	    call_user_func(array($this, 'execute'. ucfirst($this->action)));//Call the action of the module
 	    
 	    $this->actionTemplate = 'modules/' . $this->module . '/templates/'. $this->action .'Success.php';
 	    include('templates/layout.php');//Include base layout
 	    
-	    $this->postExecute();
+	     method_exists($this, 'postExecute') ? $this->postExecute() : false;
 	}
 	
 	public function addStyleSheet($url)

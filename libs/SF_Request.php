@@ -26,22 +26,23 @@ class SF_Request{
 		    unset($routeURI[0]);//remove blank spot
 		    $routeURI = array_values($routeURI);//reset indexes	
 		    $params = array();//reset partial match
-		    
+
 		    if(count($routeURI) != count($requestURI)){
-			continue;
+          //$i++;
+          continue;
 		    }
 		    
-		    while($i <= count($requestURI))
+		    while($i < count($requestURI))
 		    {
-			if($requestURI[$i] == $routeURI[$i])
-			{
-			    //array_push($params, $requestURI[$i]);
-			}elseif (strpos($routeURI[$i], ':') !== false) {
-			    $paramValue = str_replace(':', '', $routeURI[$i]);
-			    $params[$paramValue] = $requestURI[$i];//add param from url
-			    $routeURI[$i] = $requestURI[$i];
-			}
-			$i++;
+          if($requestURI[$i] == $routeURI[$i])
+          {
+            //array_push($params, $requestURI[$i]);
+          }elseif (strpos($routeURI[$i], ':') !== false) {
+            $paramValue = str_replace(':', '', $routeURI[$i]);
+            $params[$paramValue] = $requestURI[$i];//add param from url
+            $routeURI[$i] = $requestURI[$i];
+          }
+          $i++;
 		    }	
 		
 		    if($routeURI == $requestURI || $routeURI == $requestURI . "/"){
