@@ -1,0 +1,7 @@
+# Custom_Routing File
+# Routes defined here will override those in the main SF_Routing file
+
+# This will override the default "index" route with a new module called "somemodule"
+index:
+  url: /
+  param: { module: somemodule, action: index }

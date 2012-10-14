@@ -12,12 +12,16 @@ class SF_Request {
 	function getModule() {
 		return $this->module;
 	}
-	
+
 	function checkRoute($requestURI) {
 		$routingFile = Spyc::YAMLLoad('./config/SF_Routing.yml');
+		$customRoutingFile = Spyc::YAMLLoad('./config/Custom_Routing.yml');
 		$i = 0;
 
 		foreach ($routingFile as $routeName => $route) {
+			if (isset($customRoutingFile[$routeName])) {
+				$route = $customRoutingFile[$routeName];
+			}
 			$routeURI = !is_null(explode('/', $route['url'])) ? explode('/', $route['url']) : '/';
 			unset($routeURI[0]);//remove blank spot
 			$routeURI = array_values($routeURI);//reset indexes
