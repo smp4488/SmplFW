@@ -1,5 +1,8 @@
+# SF_Includes File
+# Global includes for every page
+
 styleSheets:
-	- "/css/base.css"
-  
+  - "/css/base.css"
+
 javaScripts:
   - "http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"
