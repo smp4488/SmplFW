@@ -1,0 +1,7 @@
+<?php
+class [[MODULENAME]]Model extends SF_Model {
+	function [[MODULENAME]]Model() {
+	
+	}
+}
+?>
