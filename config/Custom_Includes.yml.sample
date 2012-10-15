@@ -1,0 +1,9 @@
+# Custom_Includes File
+# Includes defined here will override those in the main SF_Routing file
+
+# This will override the default stylesheets with nothing
+styleSheets:
+
+# This will override the default JavaScript with an older version of JQuery
+javaScripts:
+  - "http://ajax.googleapis.com/ajax/libs/jquery/1.3.0/jquery.min.js"
