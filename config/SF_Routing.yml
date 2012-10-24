@@ -1,4 +1,5 @@
-#SF_Routing File
+# SF_Routing File
+# Global routing definitions
 
 index:
   url: /
@@ -16,7 +17,7 @@ blog_listing:
   url: /blog/:blogName
   param: { module: blog, action: index }
   requirements: { blogName: '[A-Za-z0-9-+]+' }
-  
+
 blog_single:
   url: /blog/:blogName/:title/:postId
   param: { module: blog, action: single }

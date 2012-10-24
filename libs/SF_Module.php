@@ -1,27 +1,25 @@
 <?php
-class SF_Module
-{
+class SF_Module {
 	var $moduleName = '';
 	var $action = '';
 	var $parameters = array();
 	
-	function SF_Module($moduleName, $action, $parameters){
+	function SF_Module($moduleName, $action, $parameters) {
 		$this->moduleName = $moduleName;
 		$this->action = $action;
 		$this->parameters = $parameters;
 	}
 	
-	function getModuleName(){
+	function getModuleName() {
 		return $this->moduleName;
 	}
 	
-	function getAction(){
+	function getAction() {
 		return $this->action;
 	}
 	
-	function getParameters(){
+	function getParameters() {
 		return $this->parameters;
 	}
 }
-	
 ?>
