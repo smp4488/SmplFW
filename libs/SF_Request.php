@@ -1,7 +1,8 @@
 <?php
 class SF_Request {
 	function SF_Request() {
-		$requestURI = explode('/', $_SERVER['REQUEST_URI']);
+		$request = parse_url($_SERVER['REQUEST_URI']);
+		$requestURI = explode('/', $request['path']);
 		$scriptName = explode('/', $_SERVER['SCRIPT_NAME']);
 		unset($requestURI[0]);//remove blank spot
 		$requestURI = array_values($requestURI);//reset indexes
@@ -10,7 +11,11 @@ class SF_Request {
 	}
 
 	function getModule() {
-		return $this->module;
+		if(!is_null($this->module)){
+			return $this->module;
+		}else{
+			return null;
+		}
 	}
 
 	function checkRoute($requestURI) {

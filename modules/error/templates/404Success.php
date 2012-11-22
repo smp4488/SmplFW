@@ -1,0 +1,1 @@
+<h1>SmplFW Error 404</h1>

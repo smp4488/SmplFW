@@ -5,6 +5,10 @@ index:
   url: /
   param: { module: index, action: index }
 
+error_404:
+  url: /404
+  param: { module:error, action: 404 }
+
 cms:
   url: /cms
   param: { module: cms, action: index }

@@ -4,7 +4,7 @@ class SF_Module {
 	var $action = '';
 	var $parameters = array();
 	
-	function SF_Module($moduleName, $action, $parameters) {
+	function SF_Module($moduleName, $action, $parameters = null) {
 		$this->moduleName = $moduleName;
 		$this->action = $action;
 		$this->parameters = $parameters;
