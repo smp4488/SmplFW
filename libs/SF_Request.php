@@ -6,7 +6,7 @@ class SF_Request {
 		$scriptName = explode('/', $_SERVER['SCRIPT_NAME']);
 		unset($requestURI[0]);//remove blank spot
 		$requestURI = array_values($requestURI);//reset indexes
-
+		$this->module = null;
 		$this->checkRoute($requestURI);
 	}
 

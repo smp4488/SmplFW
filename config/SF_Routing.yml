@@ -13,6 +13,10 @@ cms:
   url: /cms
   param: { module: cms, action: index }
 
+cms_newModule:
+  url: /cms/new-module
+  param: { module: cms, action: newModule }
+
 #blog_roll:
 #  url: /blogs
 #  param: { module: blog, action: blogRoll }
